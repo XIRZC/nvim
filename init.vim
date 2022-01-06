@@ -8,7 +8,7 @@ set t_Co=256
 set wrap
 set cursorline
 set wildmenu
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 
 " ===
 " === search config and highlight config
@@ -272,7 +272,6 @@ let g:coc_global_extensions = [
 	\ 'coc-css',
 	\ 'coc-actions',
 	\ 'coc-diagnostic',
-	\ 'coc-docker',
 	\ 'coc-eslint',
 	\ 'coc-gitignore',
 	\ 'coc-html',
@@ -295,12 +294,10 @@ let g:coc_global_extensions = [
 	\ 'coc-translator',
 	\ 'coc-tsserver',
 	\ 'coc-vetur',
-	\ 'coc-vimlsp',
 	\ 'coc-yaml',
 	\ 'coc-yank',
 	\ 'coc-sh',
-	\ 'coc-marketplace',
-	\ 'https://github.com/rodrigore/coc-tailwind-intellisense']
+	\ 'coc-marketplace']
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.

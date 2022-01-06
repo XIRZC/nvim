@@ -242,6 +242,8 @@ function! plug#begin(...)
     let home = s:path(s:plug_fnamemodify(s:plug_expand(a:1), ':p'))
   elseif exists('g:plug_home')
     let home = s:path(g:plug_home)
+  elseif has('nvim')
+    let home = stdpath('data') . '/plugged'
   elseif !empty(&rtp)
     let home = s:path(split(&rtp, ',')[0]) . '/plugged'
   else
@@ -405,7 +407,7 @@ function! plug#end()
 
   for [map, names] in items(lod.map)
     for [mode, map_prefix, key_prefix] in
-          \ [['i', '<C-O>', ''], ['n', '', ''], ['v', '', 'gv'], ['o', '', '']]
+          \ [['i', '<C-\><C-O>', ''], ['n', '', ''], ['v', '', 'gv'], ['o', '', '']]
       execute printf(
       \ '%snoremap <silent> %s %s:<C-U>call <SID>lod_map(%s, %s, %s, "%s")<CR>',
       \ mode, map, map_prefix, string(map), string(names), mode != 'i', key_prefix)
@@ -773,7 +775,7 @@ function! s:infer_properties(name, repo)
       if repo !~ '/'
         throw printf('Invalid argument: %s (implicit `vim-scripts'' expansion is deprecated)', repo)
       endif
-      let fmt = get(g:, 'plug_url_format', 'https://git::@hub.fastgit.org/%s.git')
+      let fmt = get(g:, 'plug_url_format', 'https://git::@github.com/%s.git')
       let uri = printf(fmt, repo)
     endif
     return { 'dir': s:dirpath(g:plug_home.'/'.a:name), 'uri': uri }
@@ -1169,7 +1171,7 @@ function! s:update_impl(pull, force, args) abort
     let $GIT_TERMINAL_PROMPT = 0
     for plug in values(todo)
       let plug.uri = substitute(plug.uri,
-            \ '^https://git::@hub.fastgit\.org', 'https://hub.fastgit.org', '')
+            \ '^https://git::@github\.com', 'https://github.com', '')
     endfor
   endif
 
@@ -1208,7 +1210,8 @@ function! s:update_impl(pull, force, args) abort
   normal! 2G
   silent! redraw
 
-  let s:clone_opt = []
+  " Set remote name, overriding a possible user git config's clone.defaultRemoteName
+  let s:clone_opt = ['--origin', 'origin']
   if get(g:, 'plug_shallow', 1)
     call extend(s:clone_opt, ['--depth', '1'])
     if s:git_version_requirement(1, 7, 10)
