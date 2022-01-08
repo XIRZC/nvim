@@ -132,6 +132,7 @@ map zp :PlugInstall<CR>
 " ===
 " === set theme shortcuts
 " ===
+map thh :colorscheme deus<CR>
 map thj :colorscheme gruvbox<CR>
 map thk :colorscheme onehalfdark<CR>
 map thl :colorscheme snazzy<CR>
@@ -205,6 +206,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'connorholyday/vim-snazzy'
+Plug 'theniceboy/nvim-deus'
 Plug 'rktjmp/lush.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'mhinz/vim-startify'
@@ -635,7 +637,7 @@ map <silent> T :TagbarOpenAutoClose<CR>
 " ===
 let g:SnazzyTransparent = 1
 color snazzy
-colorscheme snazzy
+colorscheme deus
 let g:lightline = { 'colorscheme': 'onehalfdark' }
 " Can be enabled or disabled
 let g:webdevicons_enable_nerdtree = 1
