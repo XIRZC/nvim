@@ -225,6 +225,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
+" lazygit
+Plug 'kdheepak/lazygit.nvim'
+
 " Markdown
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -449,6 +452,15 @@ let g:snips_author = 'Zicong Xie'
 autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
 " ===
+" === lazygit.nvim
+" ===
+noremap <c-g> :LazyGit<CR>
+let g:lazygit_floating_window_winblend = 0 " transparency of floating window
+let g:lazygit_floating_window_scaling_factor = 1.0 " scaling factor for floating window
+let g:lazygit_floating_window_corner_chars = ['╭', '╮', '╰', '╯'] " customize lazygit popup window corner characters
+let g:lazygit_use_neovim_remote = 1 " for neovim-remote support
+
+" ===
 " === FZF
 " ===
 nnoremap <c-p> :Leaderf file<CR>
@@ -538,10 +550,15 @@ let g:NERDTreeGitStatusIndicatorMapCustom= {
 " == vimtex
 " ==
 let g:tex_flavor='latexmk'
-let g:vimtex_view_method='skim'
+let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
+
+" ==
+" == vimtex
+" ==
+map <leader>wc :VimwikiAll2HTML<CR>
 
 " ==
 " == UltiSnips
