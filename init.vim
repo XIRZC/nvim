@@ -559,6 +559,8 @@ let g:tex_conceal='abdmg'
 " == vimtex
 " ==
 map <leader>wc :VimwikiAll2HTML<CR>
+map <leader>wi gg0<tab><CR>
+map we $8h<CR>
 
 " ==
 " == UltiSnips
