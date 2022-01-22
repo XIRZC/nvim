@@ -680,8 +680,9 @@ let g:mkdp_filetypes = ['markdown']
 
 "  Snippets
 source ~/.config/nvim/md-snippets.vim
+source ~/.config/nvim/wiki-snippets.vim
 " auto spell
-autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.md,*.wiki setlocal spell
 " ===
 " === vim-table-mode
 " ===
