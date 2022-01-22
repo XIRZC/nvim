@@ -561,6 +561,18 @@ let g:tex_conceal='abdmg'
 map <leader>wc :VimwikiAll2HTML<CR>
 map <leader>wi gg0<tab><CR>
 map we $8h<CR>
+function! VimwikiFindIncompleteTasks()
+  lvimgrep /- \[ \]/ %:p
+  lopen
+endfunction
+
+function! VimwikiFindAllIncompleteTasks()
+  VimwikiSearch /- \[ \]/
+  lopen
+endfunction
+
+nmap <Leader>wa :call VimwikiFindAllIncompleteTasks()<CR>
+nmap <Leader>wx :call VimwikiFindIncompleteTasks()<CR>
 
 " ==
 " == UltiSnips
@@ -683,6 +695,7 @@ source ~/.config/nvim/md-snippets.vim
 source ~/.config/nvim/wiki-snippets.vim
 " auto spell
 autocmd BufRead,BufNewFile *.md,*.wiki setlocal spell
+
 " ===
 " === vim-table-mode
 " ===
