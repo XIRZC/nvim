@@ -560,6 +560,7 @@ let g:tex_conceal='abdmg'
 " ==
 map <leader>wc :VimwikiAll2HTML<CR>
 map <leader>wi gg0<tab><CR>
+map <leader>wt :VimwikiTable<CR>
 map we $8h<CR>
 function! VimwikiFindIncompleteTasks()
   lvimgrep /- \[ \]/ %:p
@@ -570,7 +571,6 @@ function! VimwikiFindAllIncompleteTasks()
   VimwikiSearch /- \[ \]/
   lopen
 endfunction
-
 nmap <Leader>wa :call VimwikiFindAllIncompleteTasks()<CR>
 nmap <Leader>wx :call VimwikiFindIncompleteTasks()<CR>
 
