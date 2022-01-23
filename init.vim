@@ -560,8 +560,12 @@ let g:tex_conceal='abdmg'
 " ==
 let g:vimwiki_list = [
       \ {
-      \         'path': '~/mynote/wiki',
-      \         'path_html': '~/mynote/docs',
+      \         'path': '~/vikis/notes/wiki',
+      \         'path_html': '~/vikis/notes/docs',
+      \         'auto_toc': 1},
+      \ {
+      \         'path': '~/vikis/vimwikiwiki/wiki',
+      \         'path_html': '~/vikis/vimwikiwiki/docs',
       \         'auto_toc': 1},
       \ ]
 
