@@ -559,15 +559,20 @@ let g:tex_conceal='abdmg'
 " == vimtex
 " ==
 let g:vimwiki_list = [
-      \ {
-      \         'path': '~/vikis/notes/wiki',
-      \         'path_html': '~/vikis/notes/docs',
-      \         'auto_toc': 1},
-      \ {
-      \         'path': '~/vikis/vimwikiwiki/wiki',
-      \         'path_html': '~/vikis/vimwikiwiki/docs',
-      \         'auto_toc': 1},
-      \ ]
+            \ {
+            \ 'path': '~/vikis/notes/wiki',
+            \ 'path_html': '~/vikis/notes/docs',
+            \ 'name': 'notes',
+            \ 'auto_export': 1,
+            \ 'auto_toc': 1},
+            \ {
+            \ 'path': '~/vikis/vimwikiwiki/wiki',
+            \ 'path_html': '~/vikis/vimwikiwiki/docs',
+            \ 'name': 'wiki',
+            \ 'auto_export': 1,
+            \ 'auto_toc': 1},
+            \ ]
+
 
 map <leader>wc :VimwikiAll2HTML<CR>
 map <leader>wi gg0<tab><CR>
