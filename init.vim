@@ -566,8 +566,8 @@ let g:vimwiki_list = [
             \ 'auto_export': 1,
             \ 'auto_toc': 1},
             \ {
-            \ 'path': '~/vikis/vimwikiwiki/wiki',
-            \ 'path_html': '~/vikis/vimwikiwiki/docs',
+            \ 'path': '~/vikis/wiki/wiki',
+            \ 'path_html': '~/vikis/wiki/docs',
             \ 'name': 'wiki',
             \ 'auto_export': 1,
             \ 'auto_toc': 1},
