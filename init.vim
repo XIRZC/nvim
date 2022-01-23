@@ -558,6 +558,13 @@ let g:tex_conceal='abdmg'
 " ==
 " == vimtex
 " ==
+let g:vimwiki_list = [
+      \ {
+      \         'path': '~/mynote/wiki',
+      \         'path_html': '~/mynote/docs',
+      \         'auto_toc': 1},
+      \ ]
+
 map <leader>wc :VimwikiAll2HTML<CR>
 map <leader>wi gg0<tab><CR>
 map <leader>wt :VimwikiTable<CR>
@@ -566,7 +573,6 @@ function! VimwikiFindIncompleteTasks()
   lvimgrep /- \[ \]/ %:p
   lopen
 endfunction
-
 function! VimwikiFindAllIncompleteTasks()
   VimwikiSearch /- \[ \]/
   lopen

@@ -15,3 +15,5 @@ autocmd Filetype vimwiki inoremap <buffer> .2 ==<Space><Space>==<Enter><++><Esc>
 autocmd Filetype vimwiki inoremap <buffer> .3 ===<Space><Space>===<Enter><++><Esc>k3a
 autocmd Filetype vimwiki inoremap <buffer> .4 ====<Space><Space>====<Enter><++><Esc>k4a
 autocmd Filetype vimwiki inoremap <buffer> .l --------<Enter>
+autocmd Filetype vimwiki nmap <buffer> <ESC> <Plug>VimwikiGoBackLink
+autocmd Filetype vimwiki nmap <buffer> gt <Plug>VimwikiToggleListItem
