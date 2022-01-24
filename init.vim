@@ -232,7 +232,8 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
+Plug 'XIRZC/vimwiki'
 Plug 'godlygeek/tabular' " ga, or :Tabularize <regex> to align
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] }
 Plug 'dkarter/bullets.vim'
