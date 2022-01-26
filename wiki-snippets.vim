@@ -1,6 +1,6 @@
 "autocmd Filetype wiki map <leader>w yiWi[<esc>Ea](<esc>pa)
 autocmd Filetype vimwiki inoremap <buffer> .f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
-autocmd Filetype vimwiki inoremap <buffer> .w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
+" autocmd Filetype vimwiki inoremap <buffer> .w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
 autocmd Filetype vimwiki inoremap <buffer> .n ---<Enter><Enter>
 autocmd Filetype vimwiki inoremap <buffer> .b ** <++><Esc>F*i
 autocmd Filetype vimwiki inoremap <buffer> .t __ <++><Esc>F_i
@@ -17,3 +17,6 @@ autocmd Filetype vimwiki inoremap <buffer> .4 ====<Space><Space>====<Enter><++><
 autocmd Filetype vimwiki inoremap <buffer> .l --------<Enter>
 autocmd Filetype vimwiki nmap <buffer> <ESC> <Plug>VimwikiGoBackLink
 autocmd Filetype vimwiki nmap <buffer> gt <Plug>VimwikiToggleListItem
+autocmd Filetype vimwiki nnoremap <buffer> .w <CR>+F[awords/<ESC><CR>
+autocmd Filetype vimwiki nnoremap <buffer> .p <CR>+F[phrases/<ESC><CR>
+
